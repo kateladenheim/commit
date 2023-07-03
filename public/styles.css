@@ -1,0 +1,138 @@
+/* CSS for https://www.kateladenheim.com/commit */
+
+/* Body styles */
+body {
+    font-family: aktiv-grotesk, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+ /* CSS for separating buttons into two columns */
+
+/* Container styles */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+.question {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Title styles */
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #000;
+  }
+  
+  /* Row styles */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Column styles */
+  .col-md-6 {
+    flex-basis: 48%;
+    margin-bottom: 20px;
+  }
+  
+  /* Button styles */
+  .btn {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .16em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #333;
+  }
+  
+  /* Centered text styles */
+  .center {
+    text-align: center;
+  }
+  
+  Click count styles
+  .counter {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+    color: #000;
+  }
+
+  .marquee {
+    width: 100%;
+    height: 400px;
+  
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .marquee div {
+    display: block;
+    width: 200%;
+    height: 400px;
+  
+    position: absolute;
+    overflow: hidden;
+  
+    animation: marquee 20s linear infinite;
+  }
+  
+  .marquee span {
+    font-size: 275px;
+    font-weight: bold;
+    font-style: italic;
+    float: left;
+    width: 50%;
+  }
+  
+  @keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+  }
+
+  /* Mobile responsiveness */
+
+@media (max-width: 1160px) {
+    .marquee span {
+        font-size: 200px;
+      }
+}
+
+@media (max-width: 860px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-md-6 {
+      flex-basis: 100%;
+    }
+
+    .marquee span {
+        font-size: 150px;
+      }
+  }
