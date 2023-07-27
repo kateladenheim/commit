@@ -43,7 +43,7 @@ body {
   }
   
   /* Column styles */
-  .col-md-6 {
+  .column {
     flex-basis: 48%;
     margin-bottom: 20px;
   }
@@ -117,19 +117,19 @@ body {
 
   /* Mobile responsiveness */
 
-@media (max-width: 1160px) {
+@media screen and (max-width: 1160px) {
     .marquee span {
         font-size: 200px;
       }
 }
 
-@media (max-width: 860px) {
+@media screen and (max-width: 860px) {
     .row {
-      flex-direction: column;
+      flex-direction: column !important;
     }
   
-    .col-md-6 {
-      flex-basis: 100%;
+    .column {
+      flex-basis: 100% !important;
     }
 
     .marquee span {
