@@ -3,7 +3,7 @@ $(function () {
     var socket = io(); // connect to the socket
 
     socket.on('connect', function() {
-       console.log('Yeah, I am connected!!');
+        console.log('Yeah, I am connected!!');
     });
 
     // Listen from server.js for click counts 1
@@ -19,11 +19,15 @@ $(function () {
     // Emit click event for button 1
     $('#btn_click1').click(function() {
         socket.emit('clicked1'); // Emitting user click for button 1
+        // Redirect user to a new website when button 1 is clicked
+        window.location.href = 'https://www.kateladenheim.com/commit-yes'; // Replace with the desired URL
     });
 
     // Emit click event for button 2
     $('#btn_click2').click(function() {
         socket.emit('clicked2'); // Emitting user click for button 2
+        // Redirect user to a new website when button 2 is clicked
+        window.location.href = 'https://www.kateladenheim.com/commit-no'; // Replace with the desired URL
     });
 
 });
