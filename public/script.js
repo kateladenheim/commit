@@ -17,17 +17,19 @@ $(function () {
     });
 
     // Emit click event for button 1
-    $('#btn_click1').click(function() {
-        socket.emit('clicked1'); // Emitting user click for button 1
-        // Redirect user to a new website when button 1 is clicked
-        window.location.href = 'https://www.kateladenheim.com/commit-yes'; // Replace with the desired URL
-    });
+$('#btn_click1').click(function() {
+    socket.emit('clicked1'); 
+    setTimeout(function() {
+        window.location.href = 'https://www.kateladenheim.com/commit-yes';
+    }, 1000);  // Delaying the redirection by 1 second
+});
 
     // Emit click event for button 2
     $('#btn_click2').click(function() {
-        socket.emit('clicked2'); // Emitting user click for button 2
-        // Redirect user to a new website when button 2 is clicked
-        window.location.href = 'https://www.kateladenheim.com/commit-no'; // Replace with the desired URL
-    });
+    socket.emit('clicked2');
+    setTimeout(function() {
+        window.location.href = 'https://www.kateladenheim.com/commit-no';
+    }, 1000);  // Delaying the redirection by 1 second
+});
 
 });
