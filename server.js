@@ -43,21 +43,23 @@ server.on('connection', function(socket) {
     socket.emit('click_count2', counter2);
 
     // When user clicks button 1
-    socket.on('clicked1', function() {
-        counter1 += 1; // Increment click count for button 1
-        server.emit('click_count1', counter1); // Send new counter value to all users
+    socket.on('clicked1', function(ack) {
+        counter1 += 1; 
+        server.emit('click_count1', counter1);
         if (unitySocket && unitySocket.connected) {
             unitySocket.send(JSON.stringify({ button: 1, count: counter1 }));
         }
+        ack(true);  // Acknowledge that the click has been processed
     });
 
     // When user clicks button 2
-    socket.on('clicked2', function() {
+    socket.on('clicked2', function(ack) {
         counter2 += 1; // Increment click count for button 2
         server.emit('click_count2', counter2); // Send new counter value to all users
         if (unitySocket && unitySocket.connected) {
             unitySocket.send(JSON.stringify({ button: 2, count: counter2 }));
         }
+        ack(true); 
     });
 });
 
