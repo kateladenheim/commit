@@ -19,20 +19,32 @@ $(function () {
     // Emit click event for button 1
     $('#btn_click1').click(function() {
         socket.emit('clicked1', function(acknowledged) {
-            if (acknowledged) {
-                window.location.href = 'https://www.kateladenheim.com/commit-yes';
-            }
+            // if (acknowledged) {
+            //     window.location.href = 'https://www.kateladenheim.com/commit-yes';
+            // }
         });
     });
 
     // Emit click event for button 2
     $('#btn_click2').click(function() {
-        socket.emit('clicked2', function (acknowledged) {
-            // Redirect user to a new website when button 2 is clicked
-            if (acknowledged) {
-                window.location.href = 'https://www.kateladenheim.com/commit-no';
-            }
+        socket.emit('clicked2', function(acknowledged) {
+            // if (acknowledged) {
+            //     window.location.href = 'https://www.kateladenheim.com/commit-no';
+            // }
         });
+    });
+
+    window.addEventListener("beforeunload", function (e) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/handle-reload', true);
+        xhr.send();
+    });
+
+    document.addEventListener("visibilitychange", function() {
+        if (!document.hidden) {
+            // Send message to Unity game object to reconnect
+            gameInstance.SendMessage("ClientManager", "HandlePageVisibility");
+        }
     });
 
 });

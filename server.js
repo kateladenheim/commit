@@ -59,11 +59,19 @@ server.on('connection', function(socket) {
         if (unitySocket && unitySocket.connected) {
             unitySocket.send(JSON.stringify({ button: 2, count: counter2 }));
         }
-        ack(true); 
+        ack(true);
     });
 });
 
 // Start the server
 http.listen(port, function() {
     console.log('Listening on port: ' + port);
+});
+
+app.get('/handle-reload', function(req, res) {
+    if (unitySocket && unitySocket.connected) {
+        unitySocket.close();
+        console.log('WebSocket closed due to page reload');
+    }
+    res.status(200).send('Handled reload');
 });
