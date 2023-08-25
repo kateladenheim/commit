@@ -41,10 +41,11 @@ $(function () {
     });
 
     document.addEventListener("visibilitychange", function() {
-        if (!document.hidden) {
-            // Send message to Unity game object to reconnect
-            gameInstance.SendMessage("ClientManager", "HandlePageVisibility");
-        }
-    });
+    console.log("Visibility state changed to: " + (document.hidden ? "hidden" : "visible"));
+    if (!document.hidden) {
+        // Send message to Unity game object to reconnect
+        gameInstance.SendMessage("YourGameObjectName", "HandlePageVisibility");
+    }
+});
 
 });
