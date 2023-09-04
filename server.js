@@ -93,11 +93,3 @@ server.on('connection', function(socket) {
 http.listen(port, function() {
     console.log('Listening on port: ' + port);
 });
-
-// app.get('/handle-reload', function(req, res) {
-//     if (unitySocket && unitySocket.connected) {
-//         unitySocket.close();
-//         console.log('WebSocket closed due to page reload');
-//     }
-//     res.status(200).send('Handled reload');
-// });
