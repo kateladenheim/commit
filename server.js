@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 // Initialize OSC client
-var oscClient = new osc.Client('127.0.0.1', 8000);  // The IP and Port of your Unity App listening for OSC messages
+var oscClient = new osc.Client('10.225.49.181', 8000);  // The IP and Port of your Unity App listening for OSC messages
 
 var counter1 = 0; // Initial counter value for button 1
 var counter2 = 0; // Initial counter value for button 2
