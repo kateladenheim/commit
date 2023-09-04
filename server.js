@@ -52,7 +52,7 @@ server.on('connection', function(socket) {
         server.emit('click_count1', counter1);
 
         // Send an OSC message for button 1
-        oscClient.send('/clickCount1', counter1);
+        oscClient.send('/clickCount1', parseFloat(counter1));;
 
         ack(true);  // Acknowledge that the click has been processed
     });
@@ -65,7 +65,7 @@ server.on('connection', function(socket) {
         server.emit('click_count2', counter2);
 
         // Send an OSC message for button 2
-        oscClient.send('/clickCount2', counter2);
+        oscClient.send('/clickCount2', parseFloat(counter2));
 
         ack(true);
     });
