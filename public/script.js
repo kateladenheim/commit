@@ -34,18 +34,18 @@ $(function () {
         });
     });
 
-    window.addEventListener("beforeunload", function (e) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/handle-reload', true);
-        xhr.send();
-    });
+//     window.addEventListener("beforeunload", function (e) {
+//         var xhr = new XMLHttpRequest();
+//         xhr.open('GET', '/handle-reload', true);
+//         xhr.send();
+//     });
 
-    document.addEventListener("visibilitychange", function() {
-    console.log("Visibility state changed to: " + (document.hidden ? "hidden" : "visible"));
-    if (!document.hidden) {
-        // Send message to Unity game object to reconnect
-        gameInstance.SendMessage("YourGameObjectName", "HandlePageVisibility");
-    }
-});
+//     document.addEventListener("visibilitychange", function() {
+//     console.log("Visibility state changed to: " + (document.hidden ? "hidden" : "visible"));
+//     if (!document.hidden) {
+//         // Send message to Unity game object to reconnect
+//         gameInstance.SendMessage("YourGameObjectName", "HandlePageVisibility");
+//     }
+// });
 
 });
