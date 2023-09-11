@@ -20,9 +20,17 @@ body {
   }
 
 .question {
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+  }
+
+  h1 {
+    font-size: 18vw;
+    word-wrap: break-word;
+    font-style: italic;
+    line-height: 21vw;
+    font-weight: bold;
   }
   
   /* Title styles */
@@ -55,7 +63,7 @@ body {
     border: none;
     background-color: #000;
     color: #fff;
-    padding: 20px 40px;
+    padding: 15px 40px;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: .16em;

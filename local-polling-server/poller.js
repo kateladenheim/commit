@@ -2,7 +2,7 @@ const axios = require('axios');
 const osc = require('node-osc');
 
 const HEROKU_ENDPOINT = 'https://commit-3e48a13ebc10.herokuapp.com/latest-data';
-const POLL_INTERVAL = 500;
+const POLL_INTERVAL = 1000;
 
 const oscClient = new osc.Client('localhost', 8000);
 
